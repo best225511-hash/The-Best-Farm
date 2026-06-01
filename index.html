@@ -12,11 +12,12 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Tahoma,sans-serif;
+font-family:tahoma,sans-serif;
 }
 
 body{
 background:#f5f5f5;
+color:#333;
 }
 
 header{
@@ -31,25 +32,11 @@ max-width:1200px;
 margin:auto;
 }
 
-.logo-box{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.logo{
-width:80px;
-height:80px;
-border-radius:12px;
-background:white;
-object-fit:cover;
-}
-
 nav{
 margin-top:15px;
 display:flex;
-flex-wrap:wrap;
 gap:15px;
+flex-wrap:wrap;
 }
 
 nav a{
@@ -65,18 +52,7 @@ text-align:center;
 }
 
 .hero h1{
-font-size:50px;
-}
-
-.btn{
-display:inline-block;
-padding:12px 25px;
-background:#2E7D32;
-color:white;
-text-decoration:none;
-border:none;
-border-radius:10px;
-cursor:pointer;
+font-size:48px;
 }
 
 .section{
@@ -106,6 +82,15 @@ object-fit:cover;
 padding:15px;
 }
 
+.btn{
+background:#2E7D32;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
 footer{
 background:#222;
 color:white;
@@ -119,11 +104,11 @@ right:20px;
 bottom:20px;
 width:60px;
 height:60px;
-border:none;
 border-radius:50%;
+border:none;
 background:#2E7D32;
 color:white;
-font-size:22px;
+font-size:24px;
 cursor:pointer;
 }
 
@@ -139,16 +124,10 @@ background:rgba(0,0,0,.5);
 
 .modal-content{
 background:white;
-width:400px;
+width:350px;
 padding:20px;
-margin:80px auto;
-border-radius:12px;
-}
-
-input,textarea{
-width:100%;
-padding:10px;
-margin-top:10px;
+border-radius:10px;
+margin:100px auto;
 }
 
 .admin-panel{
@@ -160,8 +139,14 @@ width:100%;
 height:100%;
 background:white;
 overflow:auto;
-padding:30px;
+padding:20px;
 z-index:9999;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin:5px 0;
 }
 
 </style>
@@ -170,93 +155,42 @@ z-index:9999;
 <body>
 
 <header>
-
 <div class="container">
 
-<div class="logo-box">
-
-<img
-id="logo"
-class="logo"
-src="https://via.placeholder.com/100">
-
-<div>
-
-<h1>The Best Farm</h1>
-
-<p>เดอะเบสซ์ฟาร์ม</p>
-
-</div>
-
-</div>
+<h1>🐔 The Best Farm</h1>
+<p>เดอะเบสท์ฟาร์ม</p>
 
 <nav>
-
-<a href="#">หน้าแรก</a>
 <a href="#breeds">สายพันธุ์ไก่</a>
 <a href="#products">สินค้า</a>
-<a href="#news">ข่าวสาร</a>
-<a href="#blog">บทความ</a>
+<a href="#gallery">แกลเลอรี</a>
 <a href="#contact">ติดต่อ</a>
-
 </nav>
 
 </div>
-
 </header>
 
 <section class="hero">
-
-<h1>🐔 The Best Farm</h1>
-
-<p>ฟาร์มไก่คุณภาพ Premium Poultry Farm</p>
-
-<br>
-
-<a href="#contact" class="btn">
-ติดต่อฟาร์ม
-</a>
-
+<h1>Premium Poultry Farm</h1>
+<p>ฟาร์มไก่คุณภาพ</p>
 </section>
 
 <section id="breeds" class="section container">
-
 <h2>สายพันธุ์ไก่</h2>
-
 <br>
-
 <div class="grid" id="breedList"></div>
-
 </section>
 
 <section id="products" class="section container">
-
 <h2>สินค้า</h2>
-
 <br>
-
 <div class="grid" id="productList"></div>
-
 </section>
 
-<section id="news" class="section container">
-
-<h2>ข่าวสาร</h2>
-
+<section id="gallery" class="section container">
+<h2>แกลเลอรี</h2>
 <br>
-
-<div id="newsList"></div>
-
-</section>
-
-<section id="blog" class="section container">
-
-<h2>บทความความรู้</h2>
-
-<br>
-
-<div id="blogList"></div>
-
+<div class="grid" id="galleryList"></div>
 </section>
 
 <section id="contact" class="section container">
@@ -265,13 +199,11 @@ src="https://via.placeholder.com/100">
 
 <div class="card-content">
 
-<h2>ติดต่อเรา</h2>
+<h2>ติดต่อฟาร์ม</h2>
 
-<p>โทร : 082-193-1056</p>
-
-<p>Line : best25511</p>
-
-<p>Facebook : เดอะเบสซ์ฟาร์ม</p>
+<p>📞 082-193-1056</p>
+<p>💬 Line : best25511</p>
+<p>📘 Facebook : The Best Farm</p>
 
 </div>
 
@@ -280,18 +212,12 @@ src="https://via.placeholder.com/100">
 </section>
 
 <footer>
-
 © 2026 The Best Farm
-
 </footer>
 
-<button
-id="adminBtn"
-onclick="showLogin()">
-⚙
-</button>
+<button id="adminBtn">⚙</button>
 
-<div id="loginModal" class="modal">
+<div class="modal" id="loginModal">
 
 <div class="modal-content">
 
@@ -309,42 +235,46 @@ placeholder="Password">
 <button
 class="btn"
 onclick="login()">
+
 เข้าสู่ระบบ
+
 </button>
 
 </div>
 
 </div>
 
-<div
-id="adminPanel"
-class="admin-panel">
+<div class="admin-panel" id="adminPanel">
 
-<h1>Dashboard</h1>
+<h1>THE BEST FARM CMS</h1>
+
+<br>
+
+<button
+class="btn"
+onclick="showBreedForm()">
+
+เพิ่มสายพันธุ์
+
+</button>
+
+<button
+class="btn"
+onclick="showProductForm()">
+
+เพิ่มสินค้า
+
+</button>
+
+<button
+class="btn"
+onclick="closeAdmin()">
+
+ปิด
+
+</button>
 
 <hr><br>
-
-<button class="btn" onclick="addBreed()">
-เพิ่มสายพันธุ์
-</button>
-
-<button class="btn" onclick="addProduct()">
-เพิ่มสินค้า
-</button>
-
-<button class="btn" onclick="addNews()">
-เพิ่มข่าว
-</button>
-
-<button class="btn" onclick="addBlog()">
-เพิ่มบทความ
-</button>
-
-<button class="btn" onclick="closeAdmin()">
-ปิด
-</button>
-
-<br><br>
 
 <div id="adminContent"></div>
 
@@ -352,17 +282,19 @@ class="admin-panel">
 
 <script>
 
+const ADMIN_USER="bestfarm";
+const ADMIN_PASS="BestFarm@2026";
+
 let breeds=
-JSON.parse(
-localStorage.getItem("breeds")
-)||[];
+JSON.parse(localStorage.getItem("breeds"))||[];
 
 let products=
-JSON.parse(
-localStorage.getItem("products")
-)||[];
+JSON.parse(localStorage.getItem("products"))||[];
 
-function save(){
+let gallery=
+JSON.parse(localStorage.getItem("gallery"))||[];
+
+function saveData(){
 
 localStorage.setItem(
 "breeds",
@@ -374,21 +306,194 @@ localStorage.setItem(
 JSON.stringify(products)
 );
 
+localStorage.setItem(
+"gallery",
+JSON.stringify(gallery)
+);
+
 render();
+
+}
+
+document.getElementById(
+"adminBtn"
+).onclick=function(){
+
+document.getElementById(
+"loginModal"
+).style.display="block";
+
+};
+
+function login(){
+
+const user=
+document.getElementById(
+"username"
+).value;
+
+const pass=
+document.getElementById(
+"password"
+).value;
+
+if(
+user===ADMIN_USER &&
+pass===ADMIN_PASS
+){
+
+document.getElementById(
+"loginModal"
+).style.display="none";
+
+document.getElementById(
+"adminPanel"
+).style.display="block";
+
+}
+else{
+
+alert("เข้าสู่ระบบไม่สำเร็จ");
+
+}
+
+}
+
+function closeAdmin(){
+
+document.getElementById(
+"adminPanel"
+).style.display="none";
+
+}
+
+function showBreedForm(){
+
+document.getElementById(
+"adminContent"
+).innerHTML=`
+
+<h2>เพิ่มสายพันธุ์</h2>
+
+<input id="breedName" placeholder="ชื่อ">
+
+<input id="breedImage" placeholder="URL รูป">
+
+<textarea id="breedDesc"
+placeholder="รายละเอียด"></textarea>
+
+<button
+class="btn"
+onclick="saveBreed()">
+
+บันทึก
+
+</button>
+
+`;
+
+}
+
+function saveBreed(){
+
+breeds.push({
+
+name:
+document.getElementById(
+"breedName"
+).value,
+
+image:
+document.getElementById(
+"breedImage"
+).value,
+
+desc:
+document.getElementById(
+"breedDesc"
+).value
+
+});
+
+saveData();
+
+alert("บันทึกแล้ว");
+
+}
+
+function showProductForm(){
+
+document.getElementById(
+"adminContent"
+).innerHTML=`
+
+<h2>เพิ่มสินค้า</h2>
+
+<input id="productName" placeholder="ชื่อสินค้า">
+
+<input id="productImage" placeholder="URL รูป">
+
+<input id="productPrice" placeholder="ราคา">
+
+<button
+class="btn"
+onclick="saveProduct()">
+
+บันทึก
+
+</button>
+
+`;
+
+}
+
+function saveProduct(){
+
+products.push({
+
+name:
+document.getElementById(
+"productName"
+).value,
+
+image:
+document.getElementById(
+"productImage"
+).value,
+
+price:
+document.getElementById(
+"productPrice"
+).value
+
+});
+
+saveData();
+
+alert("บันทึกแล้ว");
 
 }
 
 function render(){
 
+renderBreeds();
+renderProducts();
+renderGallery();
+
+}
+
+function renderBreeds(){
+
+const list=
 document.getElementById(
 "breedList"
-).innerHTML="";
+);
+
+list.innerHTML="";
 
 breeds.forEach(item=>{
 
-document.getElementById(
-"breedList"
-).innerHTML+=`
+list.innerHTML+=`
 
 <div class="card">
 
@@ -408,15 +513,20 @@ document.getElementById(
 
 });
 
+}
+
+function renderProducts(){
+
+const list=
 document.getElementById(
 "productList"
-).innerHTML="";
+);
+
+list.innerHTML="";
 
 products.forEach(item=>{
 
-document.getElementById(
-"productList"
-).innerHTML+=`
+list.innerHTML+=`
 
 <div class="card">
 
@@ -426,9 +536,34 @@ document.getElementById(
 
 <h3>${item.name}</h3>
 
-<p>${item.price}</p>
+<p>${item.price} บาท</p>
 
 </div>
+
+</div>
+
+`;
+
+});
+
+}
+
+function renderGallery(){
+
+const list=
+document.getElementById(
+"galleryList"
+);
+
+list.innerHTML="";
+
+gallery.forEach(item=>{
+
+list.innerHTML+=`
+
+<div class="card">
+
+<img src="${item.image}">
 
 </div>
 
@@ -440,514 +575,7 @@ document.getElementById(
 
 render();
 
-function showLogin(){
-
-document.getElementById(
-"loginModal"
-).style.display="block";
-
-}
-
-function login(){
-
-if(
-document.getElementById("username").value=="admin"
-&&
-document.getElementById("password").value=="123456"
-){
-
-document.getElementById(
-"adminPanel"
-).style.display="block";
-
-document.getElementById(
-"loginModal"
-).style.display="none";
-
-}
-else{
-
-alert("Login Failed");
-
-}
-
-}
-
-function closeAdmin(){
-
-document.getElementById(
-"adminPanel"
-).style.display="none";
-
-}
-
-function addBreed(){
-
-document.getElementById(
-"adminContent"
-).innerHTML=`
-
-<h2>เพิ่มสายพันธุ์</h2>
-
-<input id="bname" placeholder="ชื่อ">
-
-<input id="bimage" placeholder="URL รูป">
-
-<textarea id="bdesc"></textarea>
-
-<button class="btn"
-onclick="saveBreed()">
-บันทึก
-</button>
-
-`;
-
-}
-
-function saveBreed(){
-
-breeds.push({
-
-name:
-document.getElementById("bname").value,
-
-image:
-document.getElementById("bimage").value,
-
-desc:
-document.getElementById("bdesc").value
-
-});
-
-save();
-
-}
-
-function addProduct(){
-
-document.getElementById(
-"adminContent"
-).innerHTML=`
-
-<h2>เพิ่มสินค้า</h2>
-
-<input id="pname">
-
-<input id="pimage">
-
-<input id="pprice">
-
-<button class="btn"
-onclick="saveProduct()">
-บันทึก
-</button>
-
-`;
-
-}
-
-function saveProduct(){
-
-products.push({
-
-name:
-document.getElementById("pname").value,
-
-image:
-document.getElementById("pimage").value,
-
-price:
-document.getElementById("pprice").value
-
-});
-
-save();
-
-}
-
-function addNews(){
-
-alert("ระบบข่าวสารจะเพิ่มในส่วนถัดไป");
-
-}
-
-function addBlog(){
-
-alert("ระบบบทความจะเพิ่มในส่วนถัดไป");
-
-}
-
 </script>
 
 </body>
 </html>
-function addNews(){
-
-alert("ระบบข่าวสารจะเพิ่มในส่วนถัดไป");
-
-}
-function addNews(){
-
-document.getElementById(
-"adminContent"
-).innerHTML=`
-
-<h2>เพิ่มข่าวสาร</h2>
-
-<input
-id="newsTitle"
-placeholder="หัวข้อข่าว">
-
-<textarea
-id="newsContent"
-placeholder="รายละเอียด"></textarea>
-
-<button
-class="btn"
-onclick="saveNews()">
-
-บันทึก
-
-</button>
-
-`;
-
-}
-function saveNews(){
-
-news.push({
-
-title:
-document.getElementById(
-"newsTitle"
-).value,
-
-content:
-document.getElementById(
-"newsContent"
-).value
-
-});
-
-save();
-
-}
-document.getElementById(
-"newsList"
-).innerHTML="";
-
-news.forEach(item=>{
-
-document.getElementById(
-"newsList"
-).innerHTML+=`
-
-<div class="card">
-
-<div class="card-content">
-
-<h3>${item.title}</h3>
-
-<p>${item.content}</p>
-
-</div>
-
-</div>
-
-`;
-
-});
-function addBlog(){
-
-alert("ระบบบทความจะเพิ่มในส่วนถัดไป");
-
-}
-function addBlog(){
-
-document.getElementById(
-"adminContent"
-).innerHTML=`
-
-<h2>เพิ่มบทความ</h2>
-
-<input
-id="blogTitle"
-placeholder="หัวข้อ">
-
-<textarea
-id="blogContent"
-placeholder="เนื้อหา"></textarea>
-
-<button
-class="btn"
-onclick="saveBlog()">
-
-บันทึก
-
-</button>
-
-`;
-
-}
-function saveBlog(){
-
-blogs.push({
-
-title:
-document.getElementById(
-"blogTitle"
-).value,
-
-content:
-document.getElementById(
-"blogContent"
-).value
-
-});
-
-save();
-
-}
-document.getElementById(
-"blogList"
-).innerHTML="";
-
-blogs.forEach(item=>{
-
-document.getElementById(
-"blogList"
-).innerHTML+=`
-
-<div class="card">
-
-<div class="card-content">
-
-<h3>${item.title}</h3>
-
-<p>${item.content}</p>
-
-</div>
-
-</div>
-
-`;
-
-});
-<h2>โลโก้ฟาร์ม</h2>
-
-<input
-type="file"
-id="logoUpload"
-accept="image/*">
-
-<br><br>
-
-<img
-id="previewLogo"
-style="
-width:150px;
-border-radius:10px;
-">
-<h2>โลโก้ฟาร์ม</h2>
-
-<input
-type="file"
-id="logoUpload"
-accept="image/*">
-
-<br><br>
-
-<img
-id="previewLogo"
-style="
-width:150px;
-border-radius:10px;
-">
-const savedLogo =
-localStorage.getItem("farmLogo");
-
-if(savedLogo){
-
-document
-.getElementById("logo")
-.src = savedLogo;
-
-}
-document
-.addEventListener(
-"change",
-function(e){
-
-if(
-e.target.id==="logoUpload"
-){
-
-const file =
-e.target.files[0];
-
-const reader =
-new FileReader();
-
-reader.onload =
-function(event){
-
-localStorage.setItem(
-"farmLogo",
-event.target.result
-);
-
-document
-.getElementById("logo")
-.src =
-event.target.result;
-
-};
-
-reader.readAsDataURL(
-file
-);
-
-}
-
-});
-<button
-class="btn"
-onclick="backupData()">
-
-สำรองข้อมูล
-
-</button>
-function backupData(){
-
-const data = {
-
-breeds,
-products,
-news,
-blogs
-
-};
-
-const blob =
-new Blob(
-[
-JSON.stringify(
-data,
-null,
-2
-)
-],
-{
-type:"application/json"
-}
-);
-
-const a =
-document.createElement("a");
-
-a.href =
-URL.createObjectURL(blob);
-
-a.download =
-"thebestfarm-backup.json";
-
-a.click();
-
-}
-<input
-type="file"
-id="restoreFile"
-accept=".json">
-document
-.addEventListener(
-"change",
-function(e){
-
-if(
-e.target.id==="restoreFile"
-){
-
-const file =
-e.target.files[0];
-
-const reader =
-new FileReader();
-
-reader.onload =
-function(event){
-
-const data =
-JSON.parse(
-event.target.result
-);
-
-breeds =
-data.breeds || [];
-
-products =
-data.products || [];
-
-news =
-data.news || [];
-
-blogs =
-data.blogs || [];
-
-save();
-
-};
-
-reader.readAsText(
-file
-);
-
-}
-
-});
-<button
-onclick="deleteBreed(${index})">
-
-ลบ
-
-</button>
-breeds.forEach(item=>{
-breeds.forEach((item,index)=>{
-function deleteBreed(index){
-
-if(
-confirm(
-"ลบข้อมูลนี้ ?"
-)
-){
-
-breeds.splice(
-index,
-1
-);
-
-save();
-
-}
-
-}
-function deleteProduct(index){
-
-products.splice(
-index,
-1
-);
-
-save();
-
-}admin
-123456
-localStorage.setItem(
-"adminPassword",
-"123456"
-);
-const password =
-localStorage.getItem(
-"adminPassword"
-)
-||
-"123456";
