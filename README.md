@@ -1,171 +1,281 @@
-[<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>เดอะเบสซ์ฟาร์ม - The Best Farm</title>
+<title>The Best Farm | เดอะเบสซ์ฟาร์ม</title>
 
-<meta property="og:title" content="🐔 เดอะเบสซ์ฟาร์ม - The Best Farm">
-<meta property="og:description" content="ฟาร์มไก่คุณภาพ ไข่ไก่หลากสี ไก่สายพันธุ์แท้ เลี้ยงธรรมชาติ จ.พะเยา">
-<meta property="og:image" content="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=1200">
-<meta property="og:type" content="website">
+<meta name="description" content="ฟาร์มไก่คุณภาพ ไข่หลากสี ไก่สายพันธุ์แท้ จังหวัดพะเยา">
+<meta property="og:title" content="The Best Farm">
+<meta property="og:description" content="ฟาร์มไก่คุณภาพ ไข่หลากสี ไก่สายพันธุ์แท้">
+<meta property="og:image" content="logo.png">
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f6;
-    color: #333;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-header {
-    background: linear-gradient(135deg, #2e7d32, #1b5e20);
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
+body{
+    font-family:Tahoma,sans-serif;
+    background:#f5f5f5;
+    color:#333;
 }
 
-header img {
-    width: 120px;
-    border-radius: 16px;
-    margin-bottom: 10px;
-    background: white;
+header{
+    background:#2E7D32;
+    color:white;
+    padding:20px;
 }
 
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-    background: white;
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 12px 20px;
-    background: #2e7d32;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
+.logo{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    background:white;
+    border-radius:12px;
+    padding:5px;
 }
 
-.section {
-    background: white;
-    margin: 15px;
-    padding: 25px;
-    border-radius: 12px;
+.top{
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
+nav{
+    margin-top:15px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
 }
 
-.card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    text-align: center;
-    border: 1px solid #eee;
-    transition: 0.3s;
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+.hero{
+    background:white;
+    text-align:center;
+    padding:80px 20px;
 }
 
-.card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
+.hero h1{
+    font-size:48px;
+    margin-bottom:15px;
 }
 
-.card h3 {
-    padding: 10px;
-    margin: 0;
+.hero p{
+    font-size:20px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #222;
-    color: white;
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#2E7D32;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
 }
+
+.section{
+    padding:50px 20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+
+.contact{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-    <img src="logo.png" alt="โลโก้ฟาร์ม">
-    <h1>เดอะเบสซ์ฟาร์ม</h1>
-    <p>The Best Farm</p>
+
+<div class="container">
+
+<div class="top">
+
+<img src="logo.png" class="logo" alt="The Best Farm">
+
+<div>
+<h1>The Best Farm</h1>
+<p>เดอะเบสซ์ฟาร์ม</p>
+</div>
+
+</div>
+
+<nav>
+<a href="#">หน้าแรก</a>
+<a href="#">สายพันธุ์ไก่</a>
+<a href="#">สินค้า</a>
+<a href="#">ข่าวสาร</a>
+<a href="#">บทความ</a>
+<a href="#">อัลบั้มภาพ</a>
+<a href="#">ติดต่อ</a>
+</nav>
+
+</div>
+
 </header>
 
-<div class="hero">
-    <h1>🐔 ฟาร์มไก่คุณภาพพรีเมียม</h1>
-    <p>ไข่หลากสี ไก่สายพันธุ์แท้ เลี้ยงธรรมชาติ</p>
-    <a class="btn" href="#contact">ติดต่อฟาร์ม</a>
+<section class="hero">
+
+<h1>🐔 The Best Farm</h1>
+
+<p>
+ฟาร์มไก่คุณภาพ • Premium Poultry Farm
+</p>
+
+<a href="#contact" class="btn">
+ติดต่อฟาร์ม
+</a>
+
+</section>
+
+<section class="section container">
+
+<h2>สายพันธุ์ไก่ยอดนิยม</h2>
+
+<br>
+
+<div class="grid" id="breedContainer">
+
 </div>
 
-<div class="section">
-    <h2>🐓 สายพันธุ์ไก่ของเรา</h2>
+</section>
 
-    <div class="grid">
+<section class="section container" id="contact">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc500f?w=600">
-            <h3>Easter Egger</h3>
-        </div>
+<div class="contact">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1612178537253-bccd437bffd5?w=600">
-            <h3>Olive Egger</h3>
-        </div>
+<h2>📞 ติดต่อเรา</h2>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=600">
-            <h3>Maran</h3>
-        </div>
+<br>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1601160458000-2b7e9a2a2c4c?w=600">
-            <h3>Ameraucana</h3>
-        </div>
+<p>📱 โทร : 082-193-1056</p>
+<p>💬 Line : best25511</p>
+<p>📘 Facebook : เดอะเบสซ์ฟาร์ม - The Best Farm</p>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1583521214693-8c7f8f4b0b25?w=600">
-            <h3>Araucana</h3>
-        </div>
+<br>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1604908812240-2b6b7c2c3c3a?w=600">
-            <h3>Mini Cochin</h3>
-        </div>
+<a href="tel:0821931056" class="btn">
+โทรเลย
+</a>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=600">
-            <h3>Brahma</h3>
-        </div>
-
-    </div>
 </div>
 
-<div class="section" id="contact">
-    <h2>📞 ติดต่อเรา</h2>
-    <p>📱 Call : 082-193-1056</p>
-    <p>💬 Line : best25511</p>
-    <p>📘 Facebook : เดอะเบสซ์ฟาร์ม - The Best Farm</p>
-
-    <a class="btn" href="tel:0821931056">โทรเลย</a>
-</div>
+</section>
 
 <footer>
-    © 2026 The Best Farm - เดอะเบสซ์ฟาร์ม
+
+© 2026 The Best Farm - เดอะเบสซ์ฟาร์ม
+
 </footer>
+
+<script>
+
+const breeds = [
+
+{
+name:"Easter Egger",
+image:"https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=800",
+description:"ไก่ไข่สีฟ้าและสีเขียว"
+},
+
+{
+name:"Olive Egger",
+image:"https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800",
+description:"ไก่ไข่สีเขียวมะกอก"
+},
+
+{
+name:"Ameraucana",
+image:"https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800",
+description:"ไก่ไข่สีฟ้าสายพันธุ์แท้"
+},
+
+{
+name:"Mini Cochin",
+image:"https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800",
+description:"ไก่สวยงามขนาดเล็ก"
+}
+
+];
+
+const container =
+document.getElementById("breedContainer");
+
+breeds.forEach(item=>{
+
+container.innerHTML += `
+
+<div class="card">
+
+<img src="${item.image}">
+
+<div class="card-content">
+
+<h3>${item.name}</h3>
+
+<p>${item.description}</p>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+</script>
 
 </body>
 </html>
-](https://best225511-hash.github.io/The-Best-Farm/)
