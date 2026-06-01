@@ -2036,3 +2036,382 @@ document.getElementById(
 }
 
 render();
+<button class="btn"
+onclick="newsForm()">
+
+📰 ข่าวสาร
+
+</button>
+
+<button class="btn"
+onclick="blogForm()">
+
+📚 บทความ
+
+</button>
+
+<button class="btn"
+onclick="galleryForm()">
+
+🖼️ Gallery
+
+</button>
+
+<button class="btn"
+onclick="logoForm()">
+
+🏷️ โลโก้
+
+</button>
+
+<button class="btn"
+onclick="backupData()">
+
+💾 Backup
+
+</button>
+
+<button class="btn"
+onclick="restoreForm()">
+
+📥 Restore
+
+</button>
+function newsForm(){
+
+document.getElementById(
+"adminContent"
+).innerHTML=`
+
+<h2>เพิ่มข่าวสาร</h2>
+
+<input
+id="newsTitle"
+placeholder="หัวข้อข่าว">
+
+<textarea
+id="newsDetail"
+placeholder="รายละเอียดข่าว">
+</textarea>
+
+<br><br>
+
+<button
+class="btn"
+onclick="saveNews()">
+
+บันทึก
+
+</button>
+
+<hr>
+
+<div id="newsAdminList"></div>
+
+`;
+
+renderNewsAdmin();
+
+}
+
+function saveNews(){
+
+news.push({
+
+title:
+document.getElementById(
+"newsTitle"
+).value,
+
+detail:
+document.getElementById(
+"newsDetail"
+).value,
+
+date:
+new Date().toLocaleDateString()
+
+});
+
+save();
+
+newsForm();
+
+}
+
+function renderNewsAdmin(){
+
+let html="";
+
+news.forEach((item,index)=>{
+
+html += `
+
+<div
+style="
+border:1px solid #ddd;
+padding:10px;
+margin:10px 0;
+">
+
+<b>${item.title}</b>
+
+<br>
+
+${item.date}
+
+<br><br>
+
+<button
+onclick="deleteNews(${index})">
+
+ลบ
+
+</button>
+
+</div>
+
+`;
+
+});
+
+document.getElementById(
+"newsAdminList"
+).innerHTML = html;
+
+}
+
+function deleteNews(index){
+
+news.splice(index,1);
+
+save();
+
+newsForm();
+
+}
+  function blogForm(){
+
+document.getElementById(
+"adminContent"
+).innerHTML=`
+
+<h2>เพิ่มบทความ</h2>
+
+<input
+id="blogTitle"
+placeholder="หัวข้อ">
+
+<textarea
+id="blogDetail"
+placeholder="เนื้อหา">
+</textarea>
+
+<br><br>
+
+<button
+class="btn"
+onclick="saveBlog()">
+
+บันทึก
+
+</button>
+
+<hr>
+
+<div id="blogAdminList"></div>
+
+`;
+
+renderBlogAdmin();
+
+}
+
+function saveBlog(){
+
+blogs.push({
+
+title:
+document.getElementById(
+"blogTitle"
+).value,
+
+detail:
+document.getElementById(
+"blogDetail"
+).value,
+
+date:
+new Date().toLocaleDateString()
+
+});
+
+save();
+
+blogForm();
+
+}
+
+function renderBlogAdmin(){
+
+let html="";
+
+blogs.forEach((item,index)=>{
+
+html += `
+
+<div
+style="
+border:1px solid #ddd;
+padding:10px;
+margin:10px 0;
+">
+
+<b>${item.title}</b>
+
+<br>
+
+${item.date}
+
+<br><br>
+
+<button
+onclick="deleteBlog(${index})">
+
+ลบ
+
+</button>
+
+</div>
+
+`;
+
+});
+
+document.getElementById(
+"blogAdminList"
+).innerHTML = html;
+
+}
+
+function deleteBlog(index){
+
+blogs.splice(index,1);
+
+save();
+
+blogForm();
+
+}
+  function galleryForm(){
+
+document.getElementById(
+"adminContent"
+).innerHTML=`
+
+<h2>Gallery</h2>
+
+<input
+id="galleryImage"
+placeholder="URL รูปภาพ">
+
+<input
+id="galleryCaption"
+placeholder="คำอธิบาย">
+
+<br><br>
+
+<button
+class="btn"
+onclick="saveGallery()">
+
+บันทึก
+
+</button>
+
+<hr>
+
+<div id="galleryAdminList"></div>
+
+`;
+
+renderGalleryAdmin();
+
+}
+
+function saveGallery(){
+
+gallery.push({
+
+image:
+document.getElementById(
+"galleryImage"
+).value,
+
+caption:
+document.getElementById(
+"galleryCaption"
+).value
+
+});
+
+save();
+
+galleryForm();
+
+}
+
+function renderGalleryAdmin(){
+
+let html="";
+
+gallery.forEach((item,index)=>{
+
+html += `
+
+<div
+style="
+border:1px solid #ddd;
+padding:10px;
+margin:10px 0;
+">
+
+<img
+src="${item.image}"
+width="100">
+
+<br>
+
+${item.caption}
+
+<br><br>
+
+<button
+onclick="deleteGallery(${index})">
+
+ลบ
+
+</button>
+
+</div>
+
+`;
+
+});
+
+document.getElementById(
+"galleryAdminList"
+).innerHTML=html;
+
+}
+
+function deleteGallery(index){
+
+gallery.splice(index,1);
+
+save();
+
+galleryForm();
+
+}
+  
