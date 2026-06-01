@@ -4,135 +4,167 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Best Farm | เดอะเบสซ์ฟาร์ม</title>
-
-<meta name="description" content="ฟาร์มไก่คุณภาพ ไข่หลากสี ไก่สายพันธุ์แท้ จังหวัดพะเยา">
-<meta property="og:title" content="The Best Farm">
-<meta property="og:description" content="ฟาร์มไก่คุณภาพ ไข่หลากสี ไก่สายพันธุ์แท้">
-<meta property="og:image" content="logo.png">
+<title>The Best Farm</title>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Tahoma,sans-serif;
 }
 
 body{
-    font-family:Tahoma,sans-serif;
-    background:#f5f5f5;
-    color:#333;
+background:#f5f5f5;
 }
 
 header{
-    background:#2E7D32;
-    color:white;
-    padding:20px;
+background:#2E7D32;
+color:white;
+padding:20px;
 }
 
 .container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+.logo-box{
+display:flex;
+align-items:center;
+gap:15px;
 }
 
 .logo{
-    width:90px;
-    height:90px;
-    object-fit:contain;
-    background:white;
-    border-radius:12px;
-    padding:5px;
-}
-
-.top{
-    display:flex;
-    align-items:center;
-    gap:15px;
+width:80px;
+height:80px;
+border-radius:12px;
+background:white;
+object-fit:cover;
 }
 
 nav{
-    margin-top:15px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
+margin-top:15px;
+display:flex;
+flex-wrap:wrap;
+gap:15px;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
+color:white;
+text-decoration:none;
+font-weight:bold;
 }
 
 .hero{
-    background:white;
-    text-align:center;
-    padding:80px 20px;
+background:white;
+padding:80px 20px;
+text-align:center;
 }
 
 .hero h1{
-    font-size:48px;
-    margin-bottom:15px;
-}
-
-.hero p{
-    font-size:20px;
+font-size:50px;
 }
 
 .btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 25px;
-    background:#2E7D32;
-    color:white;
-    text-decoration:none;
-    border-radius:10px;
+display:inline-block;
+padding:12px 25px;
+background:#2E7D32;
+color:white;
+text-decoration:none;
+border:none;
+border-radius:10px;
+cursor:pointer;
 }
 
 .section{
-    padding:50px 20px;
+padding:50px 20px;
 }
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .card{
-    background:white;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
 }
 
 .card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
+width:100%;
+height:220px;
+object-fit:cover;
 }
 
 .card-content{
-    padding:15px;
+padding:15px;
 }
 
 footer{
-    background:#222;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:50px;
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
 }
 
-.contact{
-    background:white;
-    padding:30px;
-    border-radius:12px;
+#adminBtn{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+border:none;
+border-radius:50%;
+background:#2E7D32;
+color:white;
+font-size:22px;
+cursor:pointer;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.5);
+}
+
+.modal-content{
+background:white;
+width:400px;
+padding:20px;
+margin:80px auto;
+border-radius:12px;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+}
+
+.admin-panel{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+overflow:auto;
+padding:30px;
+z-index:9999;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -141,25 +173,32 @@ footer{
 
 <div class="container">
 
-<div class="top">
+<div class="logo-box">
 
-<img src="logo.png" class="logo" alt="The Best Farm">
+<img
+id="logo"
+class="logo"
+src="https://via.placeholder.com/100">
 
 <div>
+
 <h1>The Best Farm</h1>
+
 <p>เดอะเบสซ์ฟาร์ม</p>
+
 </div>
 
 </div>
 
 <nav>
+
 <a href="#">หน้าแรก</a>
-<a href="#">สายพันธุ์ไก่</a>
-<a href="#">สินค้า</a>
-<a href="#">ข่าวสาร</a>
-<a href="#">บทความ</a>
-<a href="#">อัลบั้มภาพ</a>
-<a href="#">ติดต่อ</a>
+<a href="#breeds">สายพันธุ์ไก่</a>
+<a href="#products">สินค้า</a>
+<a href="#news">ข่าวสาร</a>
+<a href="#blog">บทความ</a>
+<a href="#contact">ติดต่อ</a>
+
 </nav>
 
 </div>
@@ -170,9 +209,9 @@ footer{
 
 <h1>🐔 The Best Farm</h1>
 
-<p>
-ฟาร์มไก่คุณภาพ • Premium Poultry Farm
-</p>
+<p>ฟาร์มไก่คุณภาพ Premium Poultry Farm</p>
+
+<br>
 
 <a href="#contact" class="btn">
 ติดต่อฟาร์ม
@@ -180,35 +219,61 @@ footer{
 
 </section>
 
-<section class="section container">
+<section id="breeds" class="section container">
 
-<h2>สายพันธุ์ไก่ยอดนิยม</h2>
+<h2>สายพันธุ์ไก่</h2>
 
 <br>
 
-<div class="grid" id="breedContainer">
-
-</div>
+<div class="grid" id="breedList"></div>
 
 </section>
 
-<section class="section container" id="contact">
+<section id="products" class="section container">
 
-<div class="contact">
-
-<h2>📞 ติดต่อเรา</h2>
+<h2>สินค้า</h2>
 
 <br>
 
-<p>📱 โทร : 082-193-1056</p>
-<p>💬 Line : best25511</p>
-<p>📘 Facebook : เดอะเบสซ์ฟาร์ม - The Best Farm</p>
+<div class="grid" id="productList"></div>
+
+</section>
+
+<section id="news" class="section container">
+
+<h2>ข่าวสาร</h2>
 
 <br>
 
-<a href="tel:0821931056" class="btn">
-โทรเลย
-</a>
+<div id="newsList"></div>
+
+</section>
+
+<section id="blog" class="section container">
+
+<h2>บทความความรู้</h2>
+
+<br>
+
+<div id="blogList"></div>
+
+</section>
+
+<section id="contact" class="section container">
+
+<div class="card">
+
+<div class="card-content">
+
+<h2>ติดต่อเรา</h2>
+
+<p>โทร : 082-193-1056</p>
+
+<p>Line : best25511</p>
+
+<p>Facebook : เดอะเบสซ์ฟาร์ม</p>
+
+</div>
 
 </div>
 
@@ -216,46 +281,114 @@ footer{
 
 <footer>
 
-© 2026 The Best Farm - เดอะเบสซ์ฟาร์ม
+© 2026 The Best Farm
 
 </footer>
 
+<button
+id="adminBtn"
+onclick="showLogin()">
+⚙
+</button>
+
+<div id="loginModal" class="modal">
+
+<div class="modal-content">
+
+<h2>Admin Login</h2>
+
+<input id="username" placeholder="Username">
+
+<input
+type="password"
+id="password"
+placeholder="Password">
+
+<br><br>
+
+<button
+class="btn"
+onclick="login()">
+เข้าสู่ระบบ
+</button>
+
+</div>
+
+</div>
+
+<div
+id="adminPanel"
+class="admin-panel">
+
+<h1>Dashboard</h1>
+
+<hr><br>
+
+<button class="btn" onclick="addBreed()">
+เพิ่มสายพันธุ์
+</button>
+
+<button class="btn" onclick="addProduct()">
+เพิ่มสินค้า
+</button>
+
+<button class="btn" onclick="addNews()">
+เพิ่มข่าว
+</button>
+
+<button class="btn" onclick="addBlog()">
+เพิ่มบทความ
+</button>
+
+<button class="btn" onclick="closeAdmin()">
+ปิด
+</button>
+
+<br><br>
+
+<div id="adminContent"></div>
+
+</div>
+
 <script>
 
-const breeds = [
+let breeds=
+JSON.parse(
+localStorage.getItem("breeds")
+)||[];
 
-{
-name:"Easter Egger",
-image:"https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=800",
-description:"ไก่ไข่สีฟ้าและสีเขียว"
-},
+let products=
+JSON.parse(
+localStorage.getItem("products")
+)||[];
 
-{
-name:"Olive Egger",
-image:"https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800",
-description:"ไก่ไข่สีเขียวมะกอก"
-},
+function save(){
 
-{
-name:"Ameraucana",
-image:"https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800",
-description:"ไก่ไข่สีฟ้าสายพันธุ์แท้"
-},
+localStorage.setItem(
+"breeds",
+JSON.stringify(breeds)
+);
 
-{
-name:"Mini Cochin",
-image:"https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800",
-description:"ไก่สวยงามขนาดเล็ก"
+localStorage.setItem(
+"products",
+JSON.stringify(products)
+);
+
+render();
+
 }
 
-];
+function render(){
 
-const container =
-document.getElementById("breedContainer");
+document.getElementById(
+"breedList"
+).innerHTML="";
 
 breeds.forEach(item=>{
 
-container.innerHTML += `
+document.getElementById(
+"breedList"
+).innerHTML+=`
 
 <div class="card">
 
@@ -265,7 +398,7 @@ container.innerHTML += `
 
 <h3>${item.name}</h3>
 
-<p>${item.description}</p>
+<p>${item.desc}</p>
 
 </div>
 
@@ -274,6 +407,175 @@ container.innerHTML += `
 `;
 
 });
+
+document.getElementById(
+"productList"
+).innerHTML="";
+
+products.forEach(item=>{
+
+document.getElementById(
+"productList"
+).innerHTML+=`
+
+<div class="card">
+
+<img src="${item.image}">
+
+<div class="card-content">
+
+<h3>${item.name}</h3>
+
+<p>${item.price}</p>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+render();
+
+function showLogin(){
+
+document.getElementById(
+"loginModal"
+).style.display="block";
+
+}
+
+function login(){
+
+if(
+document.getElementById("username").value=="admin"
+&&
+document.getElementById("password").value=="123456"
+){
+
+document.getElementById(
+"adminPanel"
+).style.display="block";
+
+document.getElementById(
+"loginModal"
+).style.display="none";
+
+}
+else{
+
+alert("Login Failed");
+
+}
+
+}
+
+function closeAdmin(){
+
+document.getElementById(
+"adminPanel"
+).style.display="none";
+
+}
+
+function addBreed(){
+
+document.getElementById(
+"adminContent"
+).innerHTML=`
+
+<h2>เพิ่มสายพันธุ์</h2>
+
+<input id="bname" placeholder="ชื่อ">
+
+<input id="bimage" placeholder="URL รูป">
+
+<textarea id="bdesc"></textarea>
+
+<button class="btn"
+onclick="saveBreed()">
+บันทึก
+</button>
+
+`;
+
+}
+
+function saveBreed(){
+
+breeds.push({
+
+name:
+document.getElementById("bname").value,
+
+image:
+document.getElementById("bimage").value,
+
+desc:
+document.getElementById("bdesc").value
+
+});
+
+save();
+
+}
+
+function addProduct(){
+
+document.getElementById(
+"adminContent"
+).innerHTML=`
+
+<h2>เพิ่มสินค้า</h2>
+
+<input id="pname">
+
+<input id="pimage">
+
+<input id="pprice">
+
+<button class="btn"
+onclick="saveProduct()">
+บันทึก
+</button>
+
+`;
+
+}
+
+function saveProduct(){
+
+products.push({
+
+name:
+document.getElementById("pname").value,
+
+image:
+document.getElementById("pimage").value,
+
+price:
+document.getElementById("pprice").value
+
+});
+
+save();
+
+}
+
+function addNews(){
+
+alert("ระบบข่าวสารจะเพิ่มในส่วนถัดไป");
+
+}
+
+function addBlog(){
+
+alert("ระบบบทความจะเพิ่มในส่วนถัดไป");
+
+}
 
 </script>
 
