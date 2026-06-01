@@ -586,3 +586,30 @@ function addNews(){
 alert("ระบบข่าวสารจะเพิ่มในส่วนถัดไป");
 
 }
+function addNews(){
+
+document.getElementById(
+"adminContent"
+).innerHTML=`
+
+<h2>เพิ่มข่าวสาร</h2>
+
+<input
+id="newsTitle"
+placeholder="หัวข้อข่าว">
+
+<textarea
+id="newsContent"
+placeholder="รายละเอียด"></textarea>
+
+<button
+class="btn"
+onclick="saveNews()">
+
+บันทึก
+
+</button>
+
+`;
+
+}
