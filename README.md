@@ -586,3 +586,368 @@ function addNews(){
 alert("ระบบข่าวสารจะเพิ่มในส่วนถัดไป");
 
 }
+function addNews(){
+
+document.getElementById(
+"adminContent"
+).innerHTML=`
+
+<h2>เพิ่มข่าวสาร</h2>
+
+<input
+id="newsTitle"
+placeholder="หัวข้อข่าว">
+
+<textarea
+id="newsContent"
+placeholder="รายละเอียด"></textarea>
+
+<button
+class="btn"
+onclick="saveNews()">
+
+บันทึก
+
+</button>
+
+`;
+
+}
+function saveNews(){
+
+news.push({
+
+title:
+document.getElementById(
+"newsTitle"
+).value,
+
+content:
+document.getElementById(
+"newsContent"
+).value
+
+});
+
+save();
+
+}
+document.getElementById(
+"newsList"
+).innerHTML="";
+
+news.forEach(item=>{
+
+document.getElementById(
+"newsList"
+).innerHTML+=`
+
+<div class="card">
+
+<div class="card-content">
+
+<h3>${item.title}</h3>
+
+<p>${item.content}</p>
+
+</div>
+
+</div>
+
+`;
+
+});
+function addBlog(){
+
+alert("ระบบบทความจะเพิ่มในส่วนถัดไป");
+
+}
+function addBlog(){
+
+document.getElementById(
+"adminContent"
+).innerHTML=`
+
+<h2>เพิ่มบทความ</h2>
+
+<input
+id="blogTitle"
+placeholder="หัวข้อ">
+
+<textarea
+id="blogContent"
+placeholder="เนื้อหา"></textarea>
+
+<button
+class="btn"
+onclick="saveBlog()">
+
+บันทึก
+
+</button>
+
+`;
+
+}
+function saveBlog(){
+
+blogs.push({
+
+title:
+document.getElementById(
+"blogTitle"
+).value,
+
+content:
+document.getElementById(
+"blogContent"
+).value
+
+});
+
+save();
+
+}
+document.getElementById(
+"blogList"
+).innerHTML="";
+
+blogs.forEach(item=>{
+
+document.getElementById(
+"blogList"
+).innerHTML+=`
+
+<div class="card">
+
+<div class="card-content">
+
+<h3>${item.title}</h3>
+
+<p>${item.content}</p>
+
+</div>
+
+</div>
+
+`;
+
+});
+<h2>โลโก้ฟาร์ม</h2>
+
+<input
+type="file"
+id="logoUpload"
+accept="image/*">
+
+<br><br>
+
+<img
+id="previewLogo"
+style="
+width:150px;
+border-radius:10px;
+">
+<h2>โลโก้ฟาร์ม</h2>
+
+<input
+type="file"
+id="logoUpload"
+accept="image/*">
+
+<br><br>
+
+<img
+id="previewLogo"
+style="
+width:150px;
+border-radius:10px;
+">
+const savedLogo =
+localStorage.getItem("farmLogo");
+
+if(savedLogo){
+
+document
+.getElementById("logo")
+.src = savedLogo;
+
+}
+document
+.addEventListener(
+"change",
+function(e){
+
+if(
+e.target.id==="logoUpload"
+){
+
+const file =
+e.target.files[0];
+
+const reader =
+new FileReader();
+
+reader.onload =
+function(event){
+
+localStorage.setItem(
+"farmLogo",
+event.target.result
+);
+
+document
+.getElementById("logo")
+.src =
+event.target.result;
+
+};
+
+reader.readAsDataURL(
+file
+);
+
+}
+
+});
+<button
+class="btn"
+onclick="backupData()">
+
+สำรองข้อมูล
+
+</button>
+function backupData(){
+
+const data = {
+
+breeds,
+products,
+news,
+blogs
+
+};
+
+const blob =
+new Blob(
+[
+JSON.stringify(
+data,
+null,
+2
+)
+],
+{
+type:"application/json"
+}
+);
+
+const a =
+document.createElement("a");
+
+a.href =
+URL.createObjectURL(blob);
+
+a.download =
+"thebestfarm-backup.json";
+
+a.click();
+
+}
+<input
+type="file"
+id="restoreFile"
+accept=".json">
+document
+.addEventListener(
+"change",
+function(e){
+
+if(
+e.target.id==="restoreFile"
+){
+
+const file =
+e.target.files[0];
+
+const reader =
+new FileReader();
+
+reader.onload =
+function(event){
+
+const data =
+JSON.parse(
+event.target.result
+);
+
+breeds =
+data.breeds || [];
+
+products =
+data.products || [];
+
+news =
+data.news || [];
+
+blogs =
+data.blogs || [];
+
+save();
+
+};
+
+reader.readAsText(
+file
+);
+
+}
+
+});
+<button
+onclick="deleteBreed(${index})">
+
+ลบ
+
+</button>
+breeds.forEach(item=>{
+breeds.forEach((item,index)=>{
+function deleteBreed(index){
+
+if(
+confirm(
+"ลบข้อมูลนี้ ?"
+)
+){
+
+breeds.splice(
+index,
+1
+);
+
+save();
+
+}
+
+}
+function deleteProduct(index){
+
+products.splice(
+index,
+1
+);
+
+save();
+
+}admin
+123456
+localStorage.setItem(
+"adminPassword",
+"123456"
+);
+const password =
+localStorage.getItem(
+"adminPassword"
+)
+||
+"123456";
