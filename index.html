@@ -951,4 +951,1088 @@ localStorage.getItem(
 )
 ||
 "123456";
+<body>
 
+<script>
+
+if(
+!localStorage.getItem("breeds")
+){
+
+localStorage.setItem(
+"breeds",
+JSON.stringify([
+{
+name:"Easter Egger",
+image:"https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=800",
+desc:"ไข่สีฟ้า"
+}
+])
+);
+
+}
+
+if(
+!localStorage.getItem("products")
+){
+
+localStorage.setItem(
+"products",
+JSON.stringify([])
+);
+
+}
+
+if(
+!localStorage.getItem("news")
+){
+
+localStorage.setItem(
+"news",
+JSON.stringify([])
+);
+
+}
+
+if(
+!localStorage.getItem("blogs")
+){
+
+localStorage.setItem(
+"blogs",
+JSON.stringify([])
+);
+
+}
+
+if(
+!localStorage.getItem("gallery")
+){
+
+localStorage.setItem(
+"gallery",
+JSON.stringify([])
+);
+
+}
+
+</script>
+<button class="btn" onclick="addBreed()">
+สายพันธุ์
+</button>
+
+<button class="btn" onclick="addProduct()">
+สินค้า
+</button>
+
+<button class="btn" onclick="addNews()">
+ข่าวสาร
+</button>
+
+<button class="btn" onclick="addBlog()">
+บทความ
+</button>
+
+<button class="btn" onclick="addGallery()">
+อัลบั้มภาพ
+</button>
+
+<button class="btn" onclick="backupData()">
+สำรองข้อมูล
+</button>
+function addGallery(){
+
+document.getElementById(
+"adminContent"
+).innerHTML=`
+
+<h2>เพิ่มรูปภาพ</h2>
+
+<input
+id="galleryImage"
+placeholder="URL รูปภาพ">
+
+<input
+id="galleryCaption"
+placeholder="คำอธิบาย">
+
+<button
+class="btn"
+onclick="saveGallery()">
+
+บันทึก
+
+</button>
+
+`;
+
+}
+  function saveGallery(){
+
+let gallery =
+JSON.parse(
+localStorage.getItem(
+"gallery"
+)
+);
+
+gallery.push({
+
+image:
+document.getElementById(
+"galleryImage"
+).value,
+
+caption:
+document.getElementById(
+"galleryCaption"
+).value
+
+});
+
+localStorage.setItem(
+"gallery",
+JSON.stringify(
+gallery
+)
+);
+
+alert("บันทึก
+  <!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+The Best Farm
+</title>
+
+<meta
+name="description"
+content="ฟาร์มไก่คุณภาพ">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Tahoma,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+color:#333;
+}
+
+header{
+background:#2E7D32;
+color:white;
+padding:20px;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+.logo-box{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo{
+width:90px;
+height:90px;
+background:white;
+border-radius:12px;
+object-fit:cover;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+margin-top:15px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+background:white;
+padding:80px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.hero p{
+font-size:20px;
+margin-top:15px;
+}
+
+.btn{
+background:#2E7D32;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+cursor:pointer;
+text-decoration:none;
+display:inline-block;
+}
+
+.section{
+padding:50px 20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(250px,1fr)
+);
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:15px;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+#adminBtn{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+border:none;
+border-radius:50%;
+background:#2E7D32;
+color:white;
+font-size:24px;
+cursor:pointer;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.5);
+}
+
+.modal-content{
+background:white;
+width:400px;
+padding:20px;
+border-radius:12px;
+margin:80px auto;
+}
+
+.admin-panel{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+overflow:auto;
+padding:30px;
+z-index:9999;
+}
+
+input,
+textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="logo-box">
+
+<img
+id="logo"
+class="logo"
+src="logo.png">
+
+<div>
+
+<h1>
+The Best Farm
+</h1>
+
+<p>
+เดอะเบสซ์ฟาร์ม
+</p>
+
+</div>
+
+</div>
+
+<nav>
+
+<a href="#">
+หน้าแรก
+</a>
+
+<a href="#breeds">
+สายพันธุ์ไก่
+</a>
+
+<a href="#products">
+สินค้า
+</a>
+
+<a href="#news">
+ข่าวสาร
+</a>
+
+<a href="#blog">
+บทความ
+</a>
+
+<a href="#gallery">
+อัลบั้มภาพ
+</a>
+
+<a href="#contact">
+ติดต่อ
+</a>
+
+</nav>
+
+</div>
+
+</header>
+<section class="hero">
+
+<h1>
+🐔 The Best Farm
+</h1>
+
+<p>
+
+Premium Poultry Farm
+
+</p>
+
+<br>
+
+<a
+href="#contact"
+class="btn">
+
+ติดต่อฟาร์ม
+
+</a>
+
+</section>
+<section
+id="breeds"
+class="section container">
+
+<h2>
+สายพันธุ์ไก่
+</h2>
+
+<br>
+
+<div
+class="grid"
+id="breedList">
+</div>
+
+</section>
+
+<section
+id="products"
+class="section container">
+
+<h2>
+สินค้า
+</h2>
+
+<br>
+
+<div
+class="grid"
+id="productList">
+</div>
+
+</section>
+
+<section
+id="news"
+class="section container">
+
+<h2>
+ข่าวสาร
+</h2>
+
+<br>
+
+<div
+id="newsList">
+</div>
+
+</section>
+
+<section
+id="blog"
+class="section container">
+
+<h2>
+บทความ
+</h2>
+
+<br>
+
+<div
+id="blogList">
+</div>
+
+</section>
+
+<section
+id="gallery"
+class="section container">
+
+<h2>
+อัลบั้มภาพ
+</h2>
+
+<br>
+
+<div
+class="grid"
+id="galleryList">
+</div>
+
+</section>
+<section
+id="contact"
+class="section container">
+
+<div class="card">
+
+<div class="card-content">
+
+<h2>
+ติดต่อเรา
+</h2>
+
+<p>
+📞 082-193-1056
+</p>
+
+<p>
+💬 Line : best25511
+</p>
+
+<p>
+📘 Facebook :
+The Best Farm
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 The Best Farm
+
+</footer>
+<button
+id="adminBtn"
+onclick="showLogin()">
+
+⚙
+
+</button>
+
+<div
+id="loginModal"
+class="modal">
+
+<div
+class="modal-content">
+
+<h2>
+Admin Login
+</h2>
+
+<input
+id="username"
+placeholder="Username">
+
+<input
+type="password"
+id="password"
+placeholder="Password">
+
+<br><br>
+
+<button
+class="btn"
+onclick="login()">
+
+เข้าสู่ระบบ
+
+</button>
+
+</div>
+
+</div>
+<div
+id="adminPanel"
+class="admin-panel">
+
+<h1>
+
+THE BEST FARM CMS
+
+</h1>
+
+<hr>
+
+<br>
+
+<div
+id="adminContent">
+
+พร้อมใช้งาน
+
+</div>
+
+</div>
+<script>
+
+let breeds =
+JSON.parse(
+localStorage.getItem(
+"breeds"
+)
+) || [];
+
+let products =
+JSON.parse(
+localStorage.getItem(
+"products"
+)
+) || [];
+
+let news =
+JSON.parse(
+localStorage.getItem(
+"news"
+)
+) || [];
+
+let blogs =
+JSON.parse(
+localStorage.getItem(
+"blogs"
+)
+) || [];
+
+let gallery =
+JSON.parse(
+localStorage.getItem(
+"gallery"
+)
+) || [];
+
+function save(){
+
+localStorage.setItem(
+"breeds",
+JSON.stringify(breeds)
+);
+
+localStorage.setItem(
+"products",
+JSON.stringify(products)
+);
+
+localStorage.setItem(
+"news",
+JSON.stringify(news)
+);
+
+localStorage.setItem(
+"blogs",
+JSON.stringify(blogs)
+);
+
+localStorage.setItem(
+"gallery",
+JSON.stringify(gallery)
+);
+
+render();
+
+}
+
+</script>
+const ADMIN_USER = "admin";
+const ADMIN_PASS = "123456";
+
+function showLogin(){
+
+document.getElementById(
+"loginModal"
+).style.display = "block";
+
+}
+
+function login(){
+
+const user =
+document.getElementById(
+"username"
+).value;
+
+const pass =
+document.getElementById(
+"password"
+).value;
+
+if(
+user === ADMIN_USER &&
+pass === ADMIN_PASS
+){
+
+document.getElementById(
+"loginModal"
+).style.display = "none";
+
+document.getElementById(
+"adminPanel"
+).style.display = "block";
+
+loadDashboard();
+
+}
+else{
+
+alert(
+"Username หรือ Password ไม่ถูกต้อง"
+);
+
+}
+
+}
+  <div id="adminContent">
+พร้อมใช้งาน
+</div>
+<div>
+
+<button class="btn"
+onclick="breedForm()">
+
+🐔 สายพันธุ์ไก่
+
+</button>
+
+<button class="btn"
+onclick="productForm()">
+
+🛒 สินค้า
+
+</button>
+
+<button class="btn"
+onclick="closeAdmin()">
+
+❌ ปิด
+
+</button>
+
+</div>
+
+<br>
+
+<div id="adminContent">
+
+</div>
+function closeAdmin(){
+
+document.getElementById(
+"adminPanel"
+).style.display = "none";
+
+}
+  function loadDashboard(){
+
+document.getElementById(
+"adminContent"
+).innerHTML = `
+
+<h2>Dashboard</h2>
+
+<p>
+สายพันธุ์ทั้งหมด :
+${breeds.length}
+</p>
+
+<p>
+สินค้าทั้งหมด :
+${products.length}
+</p>
+
+`;
+
+}
+  function breedForm(){
+
+document.getElementById(
+"adminContent"
+).innerHTML = `
+
+<h2>
+เพิ่มสายพันธุ์ไก่
+</h2>
+
+<input
+id="breedName"
+placeholder="ชื่อสายพันธุ์">
+
+<input
+id="breedImage"
+placeholder="URL รูปภาพ">
+
+<textarea
+id="breedDesc"
+placeholder="รายละเอียด"></textarea>
+
+<br><br>
+
+<button
+class="btn"
+onclick="saveBreed()">
+
+บันทึก
+
+</button>
+
+<hr>
+
+<div id="breedAdminList">
+
+</div>
+
+`;
+
+renderBreedAdmin();
+
+}
+  function saveBreed(){
+
+breeds.push({
+
+name:
+document.getElementById(
+"breedName"
+).value,
+
+image:
+document.getElementById(
+"breedImage"
+).value,
+
+desc:
+document.getElementById(
+"breedDesc"
+).value
+
+});
+
+save();
+
+breedForm();
+
+}
+  function renderBreedAdmin(){
+
+let html = "";
+
+breeds.forEach((item,index)=>{
+
+html += `
+
+<div
+style="
+padding:10px;
+margin:10px 0;
+border:1px solid #ddd;
+">
+
+<b>${item.name}</b>
+
+<br>
+
+<button
+onclick="deleteBreed(${index})">
+
+ลบ
+
+</button>
+
+</div>
+
+`;
+
+});
+
+document.getElementById(
+"breedAdminList"
+).innerHTML = html;
+
+}
+  function deleteBreed(index){
+
+if(confirm("ลบรายการนี้ ?")){
+
+breeds.splice(index,1);
+
+save();
+
+breedForm();
+
+}
+
+}
+  function productForm(){
+
+document.getElementById(
+"adminContent"
+).innerHTML = `
+
+<h2>
+เพิ่มสินค้า
+</h2>
+
+<input
+id="productName"
+placeholder="ชื่อสินค้า">
+
+<input
+id="productImage"
+placeholder="URL รูปภาพ">
+
+<input
+id="productPrice"
+placeholder="ราคา">
+
+<br><br>
+
+<button
+class="btn"
+onclick="saveProduct()">
+
+บันทึก
+
+</button>
+
+<hr>
+
+<div id="productAdminList">
+
+</div>
+
+`;
+
+renderProductAdmin();
+
+}
+  function saveProduct(){
+
+products.push({
+
+name:
+document.getElementById(
+"productName"
+).value,
+
+image:
+document.getElementById(
+"productImage"
+).value,
+
+price:
+document.getElementById(
+"productPrice"
+).value
+
+});
+
+save();
+
+productForm();
+
+}
+  function renderProductAdmin(){
+
+let html = "";
+
+products.forEach((item,index)=>{
+
+html += `
+
+<div
+style="
+padding:10px;
+margin:10px 0;
+border:1px solid #ddd;
+">
+
+<b>${item.name}</b>
+
+<br>
+
+ราคา :
+${item.price}
+
+<br>
+
+<button
+onclick="deleteProduct(${index})">
+
+ลบ
+
+</button>
+
+</div>
+
+`;
+
+});
+
+document.getElementById(
+"productAdminList"
+).innerHTML = html;
+
+}
+  function deleteProduct(index){
+
+if(confirm("ลบสินค้านี้ ?")){
+
+products.splice(index,1);
+
+save();
+
+productForm();
+
+}
+
+}
+  function render(){
+
+document.getElementById(
+"breedList"
+).innerHTML = "";
+
+breeds.forEach(item=>{
+
+document.getElementById(
+"breedList"
+).innerHTML += `
+
+<div class="card">
+
+<img src="${item.image}">
+
+<div class="card-content">
+
+<h3>${item.name}</h3>
+
+<p>${item.desc}</p>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+document.getElementById(
+"productList"
+).innerHTML = "";
+
+products.forEach(item=>{
+
+document.getElementById(
+"productList"
+).innerHTML += `
+
+<div class="card">
+
+<img src="${item.image}">
+
+<div class="card-content">
+
+<h3>${item.name}</h3>
+
+<p>${item.price}</p>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+render();
