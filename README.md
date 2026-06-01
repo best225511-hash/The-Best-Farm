@@ -6,10 +6,9 @@
 
 <title>เดอะเบสซ์ฟาร์ม - The Best Farm</title>
 
-<!-- Social Share -->
 <meta property="og:title" content="🐔 เดอะเบสซ์ฟาร์ม - The Best Farm">
 <meta property="og:description" content="ฟาร์มไก่คุณภาพ ไข่ไก่หลากสี ไก่สายพันธุ์แท้ เลี้ยงธรรมชาติ จ.พะเยา">
-<meta property="og:image" content="https://via.placeholder.com/1200x630">
+<meta property="og:image" content="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=1200">
 <meta property="og:type" content="website">
 
 <style>
@@ -36,12 +35,8 @@ header img {
 
 .hero {
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 20px;
     background: white;
-}
-
-.hero h1 {
-    margin-bottom: 10px;
 }
 
 .btn {
@@ -64,22 +59,32 @@ header img {
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
+    gap: 15px;
 }
 
 .card {
-    background: #fafafa;
-    border-radius: 10px;
-    padding: 12px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
     text-align: center;
     border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .card img {
     width: 100%;
-    border-radius: 10px;
-    height: 140px;
+    height: 160px;
     object-fit: cover;
+}
+
+.card h3 {
+    padding: 10px;
+    margin: 0;
 }
 
 footer {
@@ -88,17 +93,12 @@ footer {
     background: #222;
     color: white;
 }
-.small {
-    color: #666;
-    font-size: 14px;
-}
 </style>
 </head>
 
 <body>
 
 <header>
-    <!-- ใส่โลโก้ของคุณตรงนี้ -->
     <img src="logo.png" alt="โลโก้ฟาร์ม">
     <h1>เดอะเบสซ์ฟาร์ม</h1>
     <p>The Best Farm</p>
@@ -110,58 +110,49 @@ footer {
     <a class="btn" href="#contact">ติดต่อฟาร์ม</a>
 </div>
 
-<!-- เกี่ยวกับฟาร์ม -->
-<div class="section">
-    <h2>📍 ข้อมูลฟาร์ม</h2>
-    <p>ชื่อฟาร์ม : เดอะเบสซ์ฟาร์ม - The Best Farm</p>
-    <p>ที่ตั้ง : 63 หมู่ 9 บ้านปางถ้ำ ตำบลร่มเย็น อำเภอเชียงคำ จังหวัดพะเยา 56110</p>
-</div>
-
-<!-- สายพันธุ์ไก่ -->
 <div class="section">
     <h2>🐓 สายพันธุ์ไก่ของเรา</h2>
 
     <div class="grid">
 
         <div class="card">
-            <img src="easter-egger.jpg">
+            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc500f?w=600">
             <h3>Easter Egger</h3>
         </div>
 
         <div class="card">
-            <img src="olive-egger.jpg">
+            <img src="https://images.unsplash.com/photo-1612178537253-bccd437bffd5?w=600">
             <h3>Olive Egger</h3>
         </div>
 
         <div class="card">
-            <img src="maran.jpg">
+            <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=600">
             <h3>Maran</h3>
         </div>
 
         <div class="card">
-            <img src="ameraucana.jpg">
+            <img src="https://images.unsplash.com/photo-1601160458000-2b7e9a2a2c4c?w=600">
             <h3>Ameraucana</h3>
         </div>
 
         <div class="card">
-            <img src="araucana.jpg">
+            <img src="https://images.unsplash.com/photo-1583521214693-8c7f8f4b0b25?w=600">
             <h3>Araucana</h3>
         </div>
 
         <div class="card">
-            <img src="minicochin.jpg">
+            <img src="https://images.unsplash.com/photo-1604908812240-2b6b7c2c3c3a?w=600">
             <h3>Mini Cochin</h3>
         </div>
 
         <div class="card">
-            <img src="bhama.jpg">
+            <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=600">
             <h3>Brahma</h3>
         </div>
 
     </div>
 </div>
 
-<!-- ติดต่อ -->
 <div class="section" id="contact">
     <h2>📞 ติดต่อเรา</h2>
     <p>📱 Call : 082-193-1056</p>
